@@ -1,5 +1,12 @@
+const WrapperPlugin = require('wrapper-webpack-plugin')
 module.exports = {
   entry: './src/index.js',
+  plugins :[
+    new WrapperPlugin({
+      test: /\.js$/,
+      footer: 'export default Delimiter;',
+    })
+  ],
   module: {
     rules: [
       {
